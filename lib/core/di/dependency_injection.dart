@@ -4,9 +4,7 @@ import 'package:quote_generator_mobile_app/core/local_db/local_db.dart';
 import 'package:quote_generator_mobile_app/core/networking/api_service.dart';
 import 'package:quote_generator_mobile_app/core/networking/dio_factory.dart';
 import 'package:quote_generator_mobile_app/features/favorites/data/repos/favorites_repo.dart';
-import 'package:quote_generator_mobile_app/features/favorites/logic/favorites_cubit.dart';
 import 'package:quote_generator_mobile_app/features/home/data/repos/home_repo.dart';
-import 'package:quote_generator_mobile_app/features/home/logic/home_cubit.dart';
 import 'package:sqflite/sqflite.dart';
 
 final getIt = GetIt.instance;
@@ -27,13 +25,11 @@ Future<void> setupDi() async {
   getIt.registerLazySingleton<HomeRepo>(
     () => HomeRepo(apiService: getIt<ApiService>(), localDB: getIt<LocalDB>()),
   );
-  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt<HomeRepo>()));
 
   // favorites
   getIt.registerLazySingleton<FavoritesRepo>(
     () => FavoritesRepo(getIt<LocalDB>()),
   );
-  getIt.registerFactory<FavoritesCubit>(() => FavoritesCubit(getIt<FavoritesRepo>()));
 }
 
 Future<Database> createDatabase() async {

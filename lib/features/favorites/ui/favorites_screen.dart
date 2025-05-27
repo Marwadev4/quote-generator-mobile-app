@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:quote_generator_mobile_app/core/di/dependency_injection.dart';
 import 'package:quote_generator_mobile_app/core/helpers/extensions.dart';
 import 'package:quote_generator_mobile_app/core/helpers/spacing.dart';
 import 'package:quote_generator_mobile_app/core/theming/colors.dart';
 import 'package:quote_generator_mobile_app/core/theming/styles.dart';
 import 'package:quote_generator_mobile_app/core/widgets/app_button.dart';
-import 'package:quote_generator_mobile_app/features/favorites/ui/widgets/favorites_bloc_builder.dart';
+import 'package:quote_generator_mobile_app/features/favorites/data/repos/favorites_repo.dart';
+import 'package:quote_generator_mobile_app/features/favorites/logic/favorites_controller.dart';
+import 'package:quote_generator_mobile_app/features/favorites/ui/widgets/favorites_builder.dart';
 import 'package:quote_generator_mobile_app/features/favorites/ui/widgets/search_text_form_field.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -13,6 +17,8 @@ class FavoritesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(FavoritesController(getIt<FavoritesRepo>()));
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(

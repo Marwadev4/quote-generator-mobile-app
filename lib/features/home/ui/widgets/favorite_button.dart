@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:quote_generator_mobile_app/core/theming/colors.dart';
 import 'package:quote_generator_mobile_app/core/widgets/app_text_button.dart';
 import 'package:quote_generator_mobile_app/features/home/data/models/quote_response.dart';
-import 'package:quote_generator_mobile_app/features/home/logic/home_cubit.dart';
+import 'package:quote_generator_mobile_app/features/home/logic/home_controller.dart';
 
 class FavoriteButton extends StatefulWidget {
   final QuoteResponse quote;
@@ -43,7 +43,7 @@ class _FavoriteButtonState extends State<FavoriteButton> {
         setState(() {
           isFavorite = !isFavorite;
         });
-        context.read<HomeCubit>().insertOrRemoveFromDatabase(widget.quote);
+        Get.find<HomeController>().insertOrRemoveFromDatabase(widget.quote);
       },
     );
   }

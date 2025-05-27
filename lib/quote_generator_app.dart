@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:quote_generator_mobile_app/core/routing/app_router.dart';
 import 'package:quote_generator_mobile_app/core/routing/routes.dart';
 import 'package:quote_generator_mobile_app/core/theming/colors.dart';
@@ -15,7 +16,7 @@ class QuoteGeneratorApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(393, 852),
       minTextAdapt: true,
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: 'Quote Generator',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

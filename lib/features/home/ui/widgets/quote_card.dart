@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:quote_generator_mobile_app/core/helpers/spacing.dart';
 import 'package:quote_generator_mobile_app/core/theming/colors.dart';
 import 'package:quote_generator_mobile_app/core/theming/styles.dart';
 import 'package:quote_generator_mobile_app/core/widgets/app_text_button.dart';
 import 'package:quote_generator_mobile_app/features/home/data/models/quote_response.dart';
-import 'package:quote_generator_mobile_app/features/home/logic/home_cubit.dart';
+import 'package:quote_generator_mobile_app/features/home/logic/home_controller.dart';
 import 'package:quote_generator_mobile_app/features/home/ui/widgets/favorite_button.dart';
 
 class QuoteCard extends StatelessWidget {
@@ -46,7 +46,7 @@ class QuoteCard extends StatelessWidget {
                 ),
                 borderColor: Colors.white,
                 onPressed: () {
-                  context.read<HomeCubit>().getRandomQuote();
+                  Get.find<HomeController>().getRandomQuote();
                 },
               ),
             ),

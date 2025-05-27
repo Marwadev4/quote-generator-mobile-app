@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:quote_generator_mobile_app/core/di/dependency_injection.dart';
 import 'package:quote_generator_mobile_app/core/helpers/spacing.dart';
 import 'package:quote_generator_mobile_app/core/theming/colors.dart';
-import 'package:quote_generator_mobile_app/features/home/ui/widgets/quote_bloc_builder.dart';
+import 'package:quote_generator_mobile_app/features/home/data/repos/home_repo.dart';
+import 'package:quote_generator_mobile_app/features/home/logic/home_controller.dart';
+import 'package:quote_generator_mobile_app/features/home/ui/widgets/quote_builder.dart';
 import 'package:quote_generator_mobile_app/features/home/ui/widgets/view_favorite_quotes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,6 +14,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeController(getIt<HomeRepo>()));
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(

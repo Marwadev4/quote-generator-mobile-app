@@ -1,17 +1,21 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:quote_generator_mobile_app/features/favorites/data/models/favorite_quote_response.dart';
 import 'package:quote_generator_mobile_app/features/favorites/data/repos/favorites_repo.dart';
-import 'package:quote_generator_mobile_app/features/favorites/logic/favorites_state.dart';
 
-class FavoritesCubit extends Cubit<FavoritesState> {
+class FavoritesController extends GetxController {
   final FavoritesRepo _favoritesRepo;
-  FavoritesCubit(this._favoritesRepo) : super(InitFavoritesState());
+  FavoritesController(this._favoritesRepo);
+
+  RxBool isLoading = false.obs;
+  String failureMsg = '';
 
   void deleteQuote(String quote) async {
-    emit(LoadingDeleteQuoteFromFavorites());
+    isLoading.value = true;
     final response = await _favoritesRepo.deleteQuote(quote);
     response.fold(
       (message) async {
+        isLoading.value = false;
+        failureMsg = message.message ?? 'Failure';
         await getDataFromDatabase();
       },
       (message) async {
@@ -23,28 +27,31 @@ class FavoritesCubit extends Cubit<FavoritesState> {
   List<FavoriteQuoteResponse> favorites = [];
 
   void search(String searchedQuote) {
-    emit(LoadingGetQuoteFromDatabase());
+    isLoading.value = true;
     if (searchedQuote.isNotEmpty) {
       final searchedQuotes =
           favorites
               .where((quote) => quote.quote.contains(searchedQuote))
               .toList();
-      emit(SuccessGetQuoteFromDatabase(quotes: searchedQuotes));
+      isLoading.value = false;
+      favorites = searchedQuotes;
     } else {
-      emit(SuccessGetQuoteFromDatabase(quotes: favorites));
+      isLoading.value = false;
+      favorites = favorites;
     }
   }
 
   Future<void> getDataFromDatabase() async {
-    emit(LoadingGetQuoteFromDatabase());
+    isLoading.value = true;
     final response = await _favoritesRepo.getDataFromDatabase();
     response.fold(
       (message) {
-        emit(ErrorGetQuoteFromDatabase(message: message.message ?? 'Failure'));
+        isLoading.value = false;
+        failureMsg = message.message ?? 'Failure';
       },
-      (quotes) async {
+      (quotes) {
         favorites = quotes;
-        emit(SuccessGetQuoteFromDatabase(quotes: favorites));
+        isLoading.value = false;
       },
     );
   }

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:quote_generator_mobile_app/core/theming/colors.dart';
 import 'package:quote_generator_mobile_app/core/theming/styles.dart';
-import 'package:quote_generator_mobile_app/features/favorites/logic/favorites_cubit.dart';
+import 'package:quote_generator_mobile_app/features/favorites/logic/favorites_controller.dart';
 
 class SearchTextFormField extends StatefulWidget {
   const SearchTextFormField({super.key});
@@ -19,7 +19,7 @@ class _SearchTextFormFieldState extends State<SearchTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    FavoritesCubit cubit = context.read<FavoritesCubit>();
+    FavoritesController cubit = Get.find<FavoritesController>();
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(6)),

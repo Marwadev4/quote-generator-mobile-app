@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:quote_generator_mobile_app/core/helpers/spacing.dart';
 import 'package:quote_generator_mobile_app/core/theming/colors.dart';
 import 'package:quote_generator_mobile_app/core/theming/styles.dart';
 import 'package:quote_generator_mobile_app/core/widgets/app_button.dart';
 import 'package:quote_generator_mobile_app/features/favorites/data/models/favorite_quote_response.dart';
-import 'package:quote_generator_mobile_app/features/favorites/logic/favorites_cubit.dart';
+import 'package:quote_generator_mobile_app/features/favorites/logic/favorites_controller.dart';
 
 class FavoritesQuoteCard extends StatelessWidget {
   final FavoriteQuoteResponse quote;
@@ -62,7 +62,7 @@ class FavoritesQuoteCard extends StatelessWidget {
               ],
             ),
             onPressed: () {
-              context.read<FavoritesCubit>().deleteQuote(quote.quote);
+              Get.find<FavoritesController>().deleteQuote(quote.quote);
             },
           ),
         ],
