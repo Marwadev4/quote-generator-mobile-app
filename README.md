@@ -9,8 +9,9 @@ A beautiful and intuitive mobile application that generates random inspirational
 - Clean and modern user interface
 
 ## 📱 Screenshots
-<img width="556" height="983" alt="Placeholder" src="https://github.com/user-attachments/assets/26328ae4-771d-46ea-b8cc-7c218e816b32" />
-<img width="586" height="993" alt="Placeholder (1)" src="https://github.com/user-attachments/assets/b6fe6146-880a-4b84-b516-ce1bc5ba8a82" />
+<img width="393" height="852" alt="Home screen" src="https://github.com/user-attachments/assets/dc1ece19-72cb-424d-abe5-382385915336" />
+<img width="393" height="852" alt="Favorite screen (1)" src="https://github.com/user-attachments/assets/82945a60-1e84-4d80-9847-46b612336722" />
+<img width="393" height="852" alt="Favorite screen while using search" src="https://github.com/user-attachments/assets/34a28b8b-c8ee-4066-9d3d-97de130a74b6" />
 
 ## 🚀 Getting Started
 
