@@ -6,14 +6,11 @@ A beautiful and intuitive mobile application that generates random inspirational
 
 - Generate random inspirational quotes with a single tap
 - Save your favorite quotes for later
-- Share quotes with friends via social media or messaging apps
 - Clean and modern user interface
-- Works offline (cached quotes)
-- Dark/Light mode support
 
 ## 📱 Screenshots
-
-*(Screenshots will be added here after the app is developed)*
+<img width="556" height="983" alt="Placeholder" src="https://github.com/user-attachments/assets/26328ae4-771d-46ea-b8cc-7c218e816b32" />
+<img width="586" height="993" alt="Placeholder (1)" src="https://github.com/user-attachments/assets/b6fe6146-880a-4b84-b516-ce1bc5ba8a82" />
 
 ## 🚀 Getting Started
 
