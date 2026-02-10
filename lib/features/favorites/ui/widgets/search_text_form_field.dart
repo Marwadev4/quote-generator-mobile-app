@@ -19,6 +19,7 @@ class _SearchTextFormFieldState extends State<SearchTextFormField> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     FavoritesController cubit = Get.find<FavoritesController>();
     return Container(
       decoration: const BoxDecoration(
@@ -29,36 +30,37 @@ class _SearchTextFormFieldState extends State<SearchTextFormField> {
       child: TextFormField(
         onChanged: (value) {
           cubit.search(value);
-        if (searchController.text.isNotEmpty) {
-          setState(() {
-            isSearch = true;
-          });
-        } else {
-          setState(() {
-            isSearch = false;
-          });
-        }
+          if (searchController.text.isNotEmpty) {
+            setState(() {
+              isSearch = true;
+            });
+          } else {
+            setState(() {
+              isSearch = false;
+            });
+          }
         },
         controller: searchController,
-        cursorColor: ColorsManager.veryDarkGray,
+        cursorColor: LightColors.textPrimary,
         decoration: InputDecoration(
           border: InputBorder.none,
           hintStyle: TextStyles.font22VeryDarkGrayWithOpacity,
-          hintText: 'Type Something Here To Search..',
-          suffixIcon:
-               isSearch
-                  ? InkWell(
-                    child: const Icon(
-                      CupertinoIcons.xmark_circle,
-                      color: Colors.grey,
-                    ),
-                    onTap: () {
-                      searchController.clear();
-                    },
-                  )
-                  : null,
+          hintText: 'search_quotes'.tr,
+          suffixIcon: isSearch
+              ? InkWell(
+                  child: const Icon(
+                    CupertinoIcons.xmark_circle,
+                    color: Colors.grey,
+                  ),
+                  onTap: () {
+                    searchController.clear();
+                  },
+                )
+              : null,
         ),
-        style: TextStyles.font22VeryDarkGray,
+        style: TextStyles.font22VeryDarkGray.copyWith(
+          color: isDarkMode ? DarkColors.textPrimary : LightColors.textPrimary,
+        ),
       ),
     );
   }

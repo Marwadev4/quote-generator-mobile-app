@@ -8,7 +8,7 @@ class ApiService {
   const ApiService(this.dio);
 
   Future<QuoteResponse> getRandomQuote() async {
-    var response = await DioFactory.getData(endPoint: ApiConstants.quotes);
+    var response = await DioFactory.getData(endPoint: ApiConstants.random);
     List<QuoteResponse> quotes = [];
     for (var quote in response.data) {
       quotes.add(

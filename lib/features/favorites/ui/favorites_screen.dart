@@ -25,29 +25,29 @@ class FavoritesScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [ColorsManager.vividViolet, ColorsManager.moderateViolet],
+            colors: [LightColors.primary, LightColors.primaryVariant],
           ),
         ),
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AppButton(
-                  borderColor: ColorsManager.verySoftViolet,
+                  borderColor: LightColors.primarySoft,
                   borderRadius: BorderRadius.circular(6.r),
-                  backgroundColor: ColorsManager.verySoftViolet,
+                  backgroundColor: LightColors.primarySoft,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Icon(
                         Icons.arrow_back_ios,
-                        color: ColorsManager.veryDarkGray,
+                        color: LightColors.textPrimary,
                         size: 25.sp,
                       ),
                       Text(
-                        'Back To Home Screen',
+                        'back_to_home'.tr,
                         style: TextStyles.font26VeryDarkGray,
                         textAlign: TextAlign.center,
                       ),

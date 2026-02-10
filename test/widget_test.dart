@@ -7,14 +7,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quote_generator_mobile_app/core/routing/app_router.dart';
 
-import 'package:quote_generator_mobile_app/quote_generator_app.dart';
+import 'package:quote_generator/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(QuoteGeneratorApp(appRouter: AppRouter()));
+    await tester.pumpWidget(const MyApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

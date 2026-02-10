@@ -2,8 +2,8 @@ class ApiConstants {
   // static const String apiBaseUrl = "https://api.quotable.io";
   // static const String random = "/random";
   
-  static const String apiBaseUrl = "https://api.breakingbadquotes.xyz/v1";
-  static const String quotes = "/quotes";
+  static const String apiBaseUrl = "https://zenquotes.io/api";
+  static const String random = "/random";
 }
 
 class ApiErrors {

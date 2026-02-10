@@ -4,7 +4,9 @@ part 'quote_response.g.dart';
 
 @JsonSerializable()
 class QuoteResponse {
+  @JsonKey(name: 'q')
   final String quote;
+  @JsonKey(name: 'a')
   final String author;
 
   factory QuoteResponse.fromJson(Map<String, dynamic> json) =>

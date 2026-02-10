@@ -16,8 +16,9 @@ class FavoritesQuoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       decoration: BoxDecoration(
-        color: ColorsManager.veryLightGray,
+        color: LightColors.background,
         borderRadius: BorderRadius.circular(6.r),
       ),
       padding: EdgeInsets.only(
@@ -45,18 +46,18 @@ class FavoritesQuoteCard extends StatelessWidget {
               bottomLeft: Radius.circular(6.r),
               bottomRight: Radius.circular(6.r),
             ),
-            borderColor: ColorsManager.moderateViolet,
+            borderColor: LightColors.primaryVariant,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 8.w,
               children: [
                 Icon(
-                  Icons.favorite_border,
-                  color: ColorsManager.moderateViolet,
+                  Icons.favorite,
+                  color: LightColors.primaryVariant,
                   size: 30.sp,
                 ),
                 Text(
-                  'Remove From Favorite',
+                  'remove_from_favorites'.tr,
                   style: TextStyles.font22ModerateViolet,
                 ),
               ],

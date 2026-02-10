@@ -10,29 +10,22 @@ class FavoritesBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<FavoritesController>();
     return Expanded(
-      child: GetBuilder<FavoritesController>(
-        builder:
-            (controller) => Obx(
-              () =>
-                  controller.isLoading.value
-                      ? const Center(child: CircularProgressIndicator())
-                      : controller.favorites.isEmpty
-                      ? Center(
-                        child: Text(
-                          'No Favorites',
-                          style: TextStyles.font22White,
-                        ),
-                      )
-                      : ListView.separated(
-                        itemCount: controller.favorites.length,
-                        itemBuilder:
-                            (context, index) => FavoritesQuoteCard(
-                              quote: controller.favorites[index],
-                            ),
-                        separatorBuilder: (context, index) => verticalSpace(10),
-                      ),
-            ),
+      child: Obx(
+        () => controller.isLoading.value
+            ? const Center(child: CircularProgressIndicator())
+            : controller.filteredFavorites.isEmpty
+            ? Center(
+                child: Text('no_favorites'.tr, style: TextStyles.font22White),
+              )
+            : ListView.separated(
+                itemCount: controller.filteredFavorites.length,
+                itemBuilder: (context, index) => FavoritesQuoteCard(
+                  quote: controller.filteredFavorites[index],
+                ),
+                separatorBuilder: (context, index) => verticalSpace(10),
+              ),
       ),
     );
   }

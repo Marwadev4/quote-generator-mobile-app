@@ -25,7 +25,7 @@ class HomeController extends GetxController {
       (failure) {
         isLoading.value = false;
         failureMsg = failure.message ?? 'Failure';
-        // toast(message: failure.message ?? 'Failure', state: ToastStates.ERROR);      },
+        // toast(message: failure.message ?? 'Failure', state: ToastStates.ERROR);
       },
       (quote) {
         quoteResponse = quote;
@@ -44,15 +44,14 @@ class HomeController extends GetxController {
         (message) {
           isLoading.value = false;
           failureMsg = message.message ?? 'Failure';
-          // toast(message: failure.message ?? 'Failure', state: ToastStates.ERROR);      },
+          // toast(message: failure.message ?? 'Failure', state: ToastStates.ERROR);
         },
         (message) {
-          isLoading.value = false;
-          quoteResponse = quoteResponse;
+          quote = quoteResponse.quote;
+          getDataFromDatabase();
           isLoading.value = false;
         },
       );
-      quote = quoteResponse.quote;
     } else {
       final response = await _homeRepo.deleteQuote(quoteResponse.quote);
       response.fold(
@@ -61,25 +60,23 @@ class HomeController extends GetxController {
           failureMsg = message.message ?? 'Failure';
         },
         (message) {
+          quote = '';
           getDataFromDatabase();
           isLoading.value = false;
         },
       );
-      quote = '';
     }
   }
 
-  List<FavoriteQuoteResponse> favorites = [];
+  RxList<FavoriteQuoteResponse> favorites = <FavoriteQuoteResponse>[].obs;
   void getDataFromDatabase() async {
-    isLoading.value = true;
     final response = await _homeRepo.getDataFromDatabase();
     response.fold(
       (message) {
-        isLoading.value = false;
         failureMsg = message.message ?? 'Failure';
       },
       (quotes) {
-        isLoading.value = false;
+        favorites.assignAll(quotes);
       },
     );
   }

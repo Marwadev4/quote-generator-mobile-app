@@ -7,10 +7,7 @@ part of 'quote_response.dart';
 // **************************************************************************
 
 QuoteResponse _$QuoteResponseFromJson(Map<String, dynamic> json) =>
-    QuoteResponse(
-      quote: json['quote'] as String,
-      author: json['author'] as String,
-    );
+    QuoteResponse(quote: json['q'] as String, author: json['a'] as String);
 
 Map<String, dynamic> _$QuoteResponseToJson(QuoteResponse instance) =>
-    <String, dynamic>{'quote': instance.quote, 'author': instance.author};
+    <String, dynamic>{'q': instance.quote, 'a': instance.author};

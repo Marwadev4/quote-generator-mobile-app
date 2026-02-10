@@ -17,14 +17,14 @@ class ViewFavoriteQuotes extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         AppButton(
-          borderColor: ColorsManager.verySoftViolet,
+          borderColor: LightColors.primarySoft,
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(6.r),
             bottom: Radius.circular(0),
           ),
-          backgroundColor: ColorsManager.verySoftViolet,
+          backgroundColor: LightColors.primarySoft,
           child: Text(
-            'Click here to view Favorite Quotes',
+            'view_favorites'.tr,
             style: TextStyles.font26VeryDarkGray,
             textAlign: TextAlign.center,
           ),
@@ -37,19 +37,16 @@ class ViewFavoriteQuotes extends StatelessWidget {
           right: -10.w,
           child: CircleAvatar(
             radius: 16.r,
-            backgroundColor: ColorsManager.veryDarkGray,
-            child: GetBuilder<HomeController>(
-              builder:
-                  (controller) => Obx(
-                    () =>
-                        controller.isLoading.value
-                            ? Text('...', style: TextStyles.font22White)
-                            : Text(
-                              controller.favorites.length.toString(),
-                              style: TextStyles.font22White,
-                            ),
-                  ),
-            ),
+            backgroundColor: LightColors.textPrimary,
+            child: Obx(() {
+              final controller = Get.find<HomeController>();
+              return controller.isLoading.value
+                  ? Text('...', style: TextStyles.font22White)
+                  : Text(
+                      controller.favorites.length.toString(),
+                      style: TextStyles.font22White,
+                    );
+            }),
           ),
         ),
       ],

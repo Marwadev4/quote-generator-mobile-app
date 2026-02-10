@@ -24,20 +24,21 @@ class FavoritesController extends GetxController {
     );
   }
 
-  List<FavoriteQuoteResponse> favorites = [];
+  RxList<FavoriteQuoteResponse> favorites = <FavoriteQuoteResponse>[].obs;
+  RxList<FavoriteQuoteResponse> filteredFavorites =
+      <FavoriteQuoteResponse>[].obs;
 
   void search(String searchedQuote) {
-    isLoading.value = true;
     if (searchedQuote.isNotEmpty) {
-      final searchedQuotes =
-          favorites
-              .where((quote) => quote.quote.contains(searchedQuote))
-              .toList();
-      isLoading.value = false;
-      favorites = searchedQuotes;
+      final searchedQuotes = favorites
+          .where(
+            (quote) =>
+                quote.quote.toLowerCase().contains(searchedQuote.toLowerCase()),
+          )
+          .toList();
+      filteredFavorites.assignAll(searchedQuotes);
     } else {
-      isLoading.value = false;
-      favorites = favorites;
+      filteredFavorites.assignAll(favorites);
     }
   }
 
@@ -50,9 +51,16 @@ class FavoritesController extends GetxController {
         failureMsg = message.message ?? 'Failure';
       },
       (quotes) {
-        favorites = quotes;
+        favorites.assignAll(quotes);
+        filteredFavorites.assignAll(quotes);
         isLoading.value = false;
       },
     );
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    getDataFromDatabase();
   }
 }

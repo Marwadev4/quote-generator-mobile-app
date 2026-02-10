@@ -39,15 +39,15 @@ class QuoteCard extends StatelessWidget {
                   bottom: Radius.circular(6.r),
                   top: Radius.circular(0),
                 ),
-                backgroundColor: ColorsManager.moderateViolet,
-                child: Text(
-                  'Generate Another Quote',
-                  style: TextStyles.font22White,
-                ),
+                backgroundColor: LightColors.primaryVariant,
                 borderColor: Colors.white,
                 onPressed: () {
                   Get.find<HomeController>().getRandomQuote();
                 },
+                child: Text(
+                  'generate_another'.tr,
+                  style: TextStyles.font22White,
+                ),
               ),
             ),
             horizontalSpace(10),

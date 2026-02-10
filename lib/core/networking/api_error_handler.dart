@@ -14,16 +14,19 @@ class ApiErrorHandler {
           return ApiErrorModel(message: "Connection timeout with the server");
         case DioExceptionType.unknown:
           return ApiErrorModel(
-              message:
-                  "Connection to the server failed due to internet connection");
+            message:
+                "Connection to the server failed due to internet connection",
+          );
         case DioExceptionType.receiveTimeout:
           return ApiErrorModel(
-              message: "Receive timeout in connection with the server");
+            message: "Receive timeout in connection with the server",
+          );
         case DioExceptionType.badResponse:
           return _handleError(error.response?.data);
         case DioExceptionType.sendTimeout:
           return ApiErrorModel(
-              message: "Send timeout in connection with the server");
+            message: "Send timeout in connection with the server",
+          );
         default:
           return ApiErrorModel(message: "Something went wrong");
       }
@@ -34,9 +37,29 @@ class ApiErrorHandler {
 }
 
 ApiErrorModel _handleError(dynamic data) {
+  // Handle case where data is null or not a Map
+  if (data == null || data is! Map<String, dynamic>) {
+    return ApiErrorModel(
+      message: "Unknown error occurred",
+      code: null,
+      errors: null,
+    );
+  }
+
+  // Safely extract code, handling both string and int types
+  dynamic code = data['code'];
+  if (code is String) {
+    // Try to parse string to int, if fails keep as null
+    try {
+      code = int.parse(code);
+    } catch (e) {
+      code = null;
+    }
+  }
+
   return ApiErrorModel(
     message: data['message'] ?? "Unknown error occurred",
-    code: data['code'],
+    code: code,
     errors: data['data'],
   );
 }

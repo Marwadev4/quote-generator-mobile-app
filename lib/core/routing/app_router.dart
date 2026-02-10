@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quote_generator_mobile_app/core/routing/routes.dart';
 import 'package:quote_generator_mobile_app/features/favorites/ui/favorites_screen.dart';
 import 'package:quote_generator_mobile_app/features/home/ui/home_screen.dart';
+import 'package:quote_generator_mobile_app/features/settings/ui/settings_screen.dart';
 
 /// Manage Routes
 class AppRouter {
@@ -13,11 +14,13 @@ class AppRouter {
       case Routes.favoritesScreen:
         return MaterialPageRoute(builder: (context) => const FavoritesScreen());
 
+      case Routes.settingsScreen:
+        return MaterialPageRoute(builder: (context) => const SettingsScreen());
+
       default:
         return MaterialPageRoute(
-          builder:
-              (context) =>
-                  Scaffold(body: Text('No route defined for ${settings.name}')),
+          builder: (context) =>
+              Scaffold(body: Text('No route defined for ${settings.name}')),
         );
     }
   }

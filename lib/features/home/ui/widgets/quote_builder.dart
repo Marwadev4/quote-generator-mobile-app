@@ -15,7 +15,7 @@ class QuoteBlocBuilder extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: ColorsManager.veryLightGray,
+        color: LightColors.background,
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(6.r),
           top: Radius.circular(0),
@@ -31,8 +31,8 @@ class QuoteBlocBuilder extends StatelessWidget {
         return controller.isLoading.value
             ? LoadingQuoteCard()
             : controller.quoteResponse != null
-                ? QuoteCard(quote: controller.quoteResponse!)
-                : const SizedBox();
+            ? QuoteCard(quote: controller.quoteResponse!)
+            : const SizedBox();
       }),
     );
   }
