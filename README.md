@@ -13,7 +13,7 @@ A beautiful and intuitive Flutter mobile application that generates random inspi
 - 💾 Persistent theme and language preferences
 
 ## 📱 Screenshots
-```
+
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
 <img width="556" height="983" alt="Placeholder" src="https://github.com/user-attachments/assets/d3b66b46-778a-4ca6-b143-42f164e16d9f" />
 <img width="586" height="993" alt="Placeholder (1)" src="https://github.com/user-attachments/assets/af803a5f-2543-48fc-8022-e78e6a62d582" />
@@ -25,7 +25,7 @@ A beautiful and intuitive Flutter mobile application that generates random inspi
 <img width="556" height="983" alt="Placeholder" src="https://github.com/user-attachments/assets/c09e7cf4-55c3-4440-af4e-43f13cd2b324" />
 <img width="586" height="993" alt="Placeholder (1)" src="https://github.com/user-attachments/assets/ba00f4ce-c60d-49eb-86be-0a9fd527c638" />
 </div>
-```
+
 ## 🚀 Getting Started
 
 ### Prerequisites
