@@ -15,14 +15,15 @@ A beautiful and intuitive Flutter mobile application that generates random inspi
 ## 📱 Screenshots
 ```
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-![photo_2026-02-13_01-53-32](https://github.com/user-attachments/assets/70e83a2b-b43d-468c-bfa5-a8af7df6d28a)
-![photo_2026-02-13_01-53-31](https://github.com/user-attachments/assets/a037b82e-3ccb-4c00-900a-97d437d24362)
-![photo_2026-02-13_01-53-30](https://github.com/user-attachments/assets/c7c95465-3d50-4b0d-8f79-ee9e2eae76bb)
+![photo_2026-02-13_01-53-24](https://github.com/user-attachments/assets/d3b66b46-778a-4ca6-b143-42f164e16d9f)
+![photo_2026-02-13_01-53-27](https://github.com/user-attachments/assets/af803a5f-2543-48fc-8022-e78e6a62d582)
+![photo_2026-02-13_01-53-29](https://github.com/user-attachments/assets/c7f5042a-4e22-45e2-81c9-5b04ab6fe2b3)
+
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-![photo_2026-02-13_01-53-29](https://github.com/user-attachments/assets/075211b1-9bc7-48c2-9dd4-904e2060978b)
-![photo_2026-02-13_01-53-27](https://github.com/user-attachments/assets/f1269c36-9fee-4d2e-a9a1-52fad88ad5f0)
-![photo_2026-02-13_01-53-24](https://github.com/user-attachments/assets/0324008f-b8b8-400b-a86d-1b27d8454447)
+![photo_2026-02-13_01-53-30](https://github.com/user-attachments/assets/623a1db5-5589-47e5-9066-a3b6aa6a824c)
+![photo_2026-02-13_01-53-31](https://github.com/user-attachments/assets/c09e7cf4-55c3-4440-af4e-43f13cd2b324)
+![photo_2026-02-13_01-53-32](https://github.com/user-attachments/assets/ba00f4ce-c60d-49eb-86be-0a9fd527c638)
 </div>
 ```
 ## 🚀 Getting Started
