@@ -13,13 +13,18 @@ A beautiful and intuitive Flutter mobile application that generates random inspi
 - 💾 Persistent theme and language preferences
 
 ## 📱 Screenshots
-
+```
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-  <img width="30%" src="https://github.com/user-attachments/assets/dc1ece19-72cb-424d-abe5-382385915336" alt="Home screen" />
-  <img width="30%" src="https://github.com/user-attachments/assets/82945a60-1e84-4d80-9847-46b612336722" alt="Favorite screen" />
-  <img width="30%" src="https://github.com/user-attachments/assets/34a28b8b-c8ee-4066-9d3d-97de130a74b6" alt="Favorite screen with search" />
+![photo_2026-02-13_01-53-32](https://github.com/user-attachments/assets/70e83a2b-b43d-468c-bfa5-a8af7df6d28a)
+![photo_2026-02-13_01-53-31](https://github.com/user-attachments/assets/a037b82e-3ccb-4c00-900a-97d437d24362)
+![photo_2026-02-13_01-53-30](https://github.com/user-attachments/assets/c7c95465-3d50-4b0d-8f79-ee9e2eae76bb)
 </div>
-
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+![photo_2026-02-13_01-53-29](https://github.com/user-attachments/assets/075211b1-9bc7-48c2-9dd4-904e2060978b)
+![photo_2026-02-13_01-53-27](https://github.com/user-attachments/assets/f1269c36-9fee-4d2e-a9a1-52fad88ad5f0)
+![photo_2026-02-13_01-53-24](https://github.com/user-attachments/assets/0324008f-b8b8-400b-a86d-1b27d8454447)
+</div>
+```
 ## 🚀 Getting Started
 
 ### Prerequisites
