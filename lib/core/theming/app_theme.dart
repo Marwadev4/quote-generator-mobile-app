@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quote_generator_mobile_app/core/theming/app_colors_extension.dart';
 import 'package:quote_generator_mobile_app/core/theming/colors.dart';
 
 class AppTheme {
@@ -137,6 +138,7 @@ class AppTheme {
           fontWeight: FontWeight.bold,
         ),
       ),
+      extensions: const [AppColors.light],
     );
   }
 
@@ -278,6 +280,7 @@ class AppTheme {
           fontWeight: FontWeight.bold,
         ),
       ),
+      extensions: const [AppColors.dark],
     );
   }
 }

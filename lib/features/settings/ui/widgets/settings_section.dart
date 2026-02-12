@@ -32,13 +32,20 @@ class SettingsSection extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(icon, color: isDarkMode ? DarkColors.primaryVariant : LightColors.primaryVariant, size: 24.sp),
+              Icon(
+                icon,
+                color: isDarkMode
+                    ? DarkColors.primaryVariant
+                    : LightColors.primaryVariant,
+                size: 24.sp,
+              ),
               horizontalSpace(8),
               Text(
                 title,
                 style: TextStyles.font22VeryDarkGray.copyWith(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.bold,
+                  color: isDarkMode ? Colors.white : DarkColors.textPrimary,
                 ),
               ),
             ],
