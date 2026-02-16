@@ -13,29 +13,16 @@ A beautiful and intuitive Flutter mobile application that generates random inspi
 - 💾 Persistent theme and language preferences
 
 ## 📱 Screenshots
-
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 1200px; margin: 0 auto;">
-  <div style="flex: 0 0 calc(33.333% - 10px); min-width: 280px;">
-    <img width="556" height="983" alt="Screenshot 1" src="https://github.com/user-attachments/assets/d3b66b46-778a-4ca6-b143-42f164e16d9f" style="width: 100%; height: auto; border-radius: 8px;" />
-  </div>
-  <div style="flex: 0 0 calc(33.333% - 10px); min-width: 280px;">
-    <img width="586" height="993" alt="Screenshot 2" src="https://github.com/user-attachments/assets/af803a5f-2543-48fc-8022-e78e6a62d582" style="width: 100%; height: auto; border-radius: 8px;" />
-  </div>
-  <div style="flex: 0 0 calc(33.333% - 10px); min-width: 280px;">
-    <img width="556" height="983" alt="Screenshot 3" src="https://github.com/user-attachments/assets/c7f5042a-4e22-45e2-81c9-5b04ab6fe2b3" style="width: 100%; height: auto; border-radius: 8px;" />
-  </div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <img width="30%" src="https://github.com/user-attachments/assets/d3b66b46-778a-4ca6-b143-42f164e16d9f" alt="App Logo" />
+  <img width="30%" src="https://github.com/user-attachments/assets/af803a5f-2543-48fc-8022-e78e6a62d582" alt="Splash Screen Logo" />
+  <img width="30%" src="https://github.com/user-attachments/assets/c7f5042a-4e22-45e2-81c9-5b04ab6fe2b3" alt="Splash Screen Background" />
 </div>
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 1200px; margin: 20px auto 0;">
-  <div style="flex: 0 0 calc(33.333% - 10px); min-width: 280px;">
-    <img width="586" height="993" alt="Screenshot 4" src="https://github.com/user-attachments/assets/623a1db5-5589-47e5-9066-a3b6aa6a824c" style="width: 100%; height: auto; border-radius: 8px;" />
-  </div>
-  <div style="flex: 0 0 calc(33.333% - 10px); min-width: 280px;">
-    <img width="556" height="983" alt="Screenshot 5" src="https://github.com/user-attachments/assets/c09e7cf4-55c3-4440-af4e-43f13cd2b324" style="width: 100%; height: auto; border-radius: 8px;" />
-  </div>
-  <div style="flex: 0 0 calc(33.333% - 10px); min-width: 280px;">
-    <img width="586" height="993" alt="Screenshot 6" src="https://github.com/user-attachments/assets/ba00f4ce-c60d-49eb-86be-0a9fd527c638" style="width: 100%; height: auto; border-radius: 8px;" />
-  </div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <img width="30%" src="https://github.com/user-attachments/assets/623a1db5-5589-47e5-9066-a3b6aa6a824c" alt="App Logo" />
+  <img width="30%" src="https://github.com/user-attachments/assets/c09e7cf4-55c3-4440-af4e-43f13cd2b324" alt="Splash Screen Logo" />
+  <img width="30%" src="https://github.com/user-attachments/assets/ba00f4ce-c60d-49eb-86be-0a9fd527c638" alt="Splash Screen Background" />
 </div>
 
 ## 🚀 Getting Started
